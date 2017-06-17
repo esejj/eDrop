@@ -1,0 +1,36 @@
+# ixDROP - config #
+
+ #Tu ustaw itemy które mają być w gui (dropped)
+  item1: diamond
+  item2: iron
+  item3: gold
+  item4: apple
+  item5: book
+  item6: air # Nic
+ #Nazwa itemu powyżej np (n1 = &bDiament)
+  name1: &3DIAMENT
+  name2: &7ZELAZO
+  name3: &eZLOTO
+  name4: &cJABLKO
+  name5: &6KSIAZKA
+  name6: &lNIC
+ #Chance = Szansa (pamietaj o wstawianu 2 x %)
+  chance1: 10%%
+  chance2: 10%%
+  chance3: 10%%
+  chance4: 10%%
+  chance5: 10%%
+  chance6: 10%%
+ #Lore = Opis itemku (Nowa linijka = ||)
+  lore1: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
+  lore2: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
+  lore3: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
+  lore4: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
+  lore5: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
+  # msg = Wiadomosc po wykopaniu sórowca
+  msg1: &6Znalazles &3DIAMENT &7(x1)
+  msg2: &6Znalazles &7ZELAZO &7(x1)
+  msg3: &6Znalazles &eZLOTO &7(x1)
+  msg4: &6Znalazles &cJABLKO &7(x1)
+  msg5: &6Znalazles &6KSIAZKE &7(x1)
+  msg6: &6Znalazles NIC &7(x0)
