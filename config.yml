@@ -22,15 +22,16 @@
   chance5: 10%%
   chance6: 10%%
  #Lore = Opis itemku (Nowa linijka = ||)
-  lore1: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
-  lore2: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
-  lore3: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
-  lore4: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
-  lore5: &7Szansa: &610%%||&7Status: &aWLACZONE||&aFORTUNE: &cNIE
-  # msg = Wiadomosc po wykopaniu sórowca
-  msg1: &6Znalazles &3DIAMENT &7(x1)
-  msg2: &6Znalazles &7ZELAZO &7(x1)
-  msg3: &6Znalazles &eZLOTO &7(x1)
-  msg4: &6Znalazles &cJABLKO &7(x1)
-  msg5: &6Znalazles &6KSIAZKE &7(x1)
-  msg6: &6Znalazles NIC &7(x0)
+  lore1:&8•  &7Szansa: &6%{chance1}%||&8• &6Status: %{drop.%{item1}%.%player%}%||&8• &aFORTUNE: &cWYLACZONE
+  lore2:&8•  &7Szansa: &6%{chance2}%||&8• &6Status: %{drop.%{item2}%.%player%}%||&8• &aFORTUNE: &cWYLACZONE
+  lore3:&8•  &7Szansa: &6%{chance3}%||&8• &6Status: %{drop.%{item3}%.%player%}%||&8• &aFORTUNE: &cWYLACZONE
+  lore4:&8•  &7Szansa: &6%{chance4}%||&8• &6Status: %{drop.%{item4}%.%player%}%||&8• &aFORTUNE: &cWYLACZONE
+  lore5:&8•  &7Szansa: &6%{chance5}%||&8• &6Status: %{drop.%{item5}%.%player%}%||&8• &aFORTUNE: &cWYLACZONE
+  lore6:&8•  &7Szansa: &6%{chance6}%||&8• &6Status: %{drop.%{item6}%.%player%}%||&8• &aFORTUNE: &CWYLACZONE
+  # msg = Wiadomosc po wykopaniu surowca
+  msg1: &6Znalazles %{name1}% &7(x1)
+  msg2: &6Znalazles %{name2}% &7(x1)
+  msg3: &6Znalazles %{name3}% &7(x1)
+  msg4: &6Znalazles %{name4}% &7(x1)
+  msg5: &6Znalazles %{name5}% &7(x1)
+  msg6: &6Znalazles %{name6}% &7(x0)
