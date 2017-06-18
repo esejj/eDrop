@@ -1,107 +1,100 @@
 # PRAWNYM WLASCICIELEM SKRYPTU JEST IMXKVPI (KACPER.K) #
-skript load:
-	if folder "/plugins/ixDROP" is doesn't exists:
-		create folder "/plugins/ixDROP"
-	if file "/plugins/ixDROP/config.yml" is doesn't exists:
-		create file "/plugins/ixDROP/config.yml"
-		download "https://raw.githubusercontent.com/imxkvpi/ixDROP/master/config.yml" to "/plugins/ixDROP/config.yml"
-	set {item1} to yaml value "item1" get of "/plugins/ixDROP/config.yml"
-	set {item2} to yaml value "item2" get of "/plugins/ixDROP/config.yml"
-	set {item3} to yaml value "item3" get of "/plugins/ixDROP/config.yml"
-	set {item4} to yaml value "item4" get of "/plugins/ixDROP/config.yml"
-	set {item5} to yaml value "item5" get of "/plugins/ixDROP/config.yml"
-	set {item6} to yaml value "item6" get of "/plugins/ixDROP/config.yml"
-	set {chance1} to yaml value "chance1" get of "/plugins/ixDROP/config.yml"
-	set {chance2} to yaml value "chance2" get of "/plugins/ixDROP/config.yml"
-	set {chance3} to yaml value "chance3" get of "/plugins/ixDROP/config.yml"
-	set {chance4} to yaml value "chance4" get of "/plugins/ixDROP/config.yml"
-	set {chance5} to yaml value "chance5" get of "/plugins/ixDROP/config.yml"
-	set {chance6} to yaml value "chance6" get of "/plugins/ixDROP/config.yml"
-	set {name1} to yaml value "name1" get of "/plugins/ixDROP/config.yml"
-	set {name2} to yaml value "name2" get of "/plugins/ixDROP/config.yml"
-	set {name3} to yaml value "name3" get of "/plugins/ixDROP/config.yml"
-	set {name4} to yaml value "name4" get of "/plugins/ixDROP/config.yml"
-	set {name5} to yaml value "name5" get of "/plugins/ixDROP/config.yml"
-	set {name6} to yaml value "name6" get of "/plugins/ixDROP/config.yml"
-	set {lore1} to yaml value "lore1" get of "/plugins/ixDROP/config.yml"
-	set {lore2} to yaml value "lore2" get of "/plugins/ixDROP/config.yml"
-	set {lore3} to yaml value "lore3" get of "/plugins/ixDROP/config.yml"
-	set {lore4} to yaml value "lore4" get of "/plugins/ixDROP/config.yml"
-	set {lore5} to yaml value "lore5" get of "/plugins/ixDROP/config.yml"
-	set {lore6} to yaml value "lore6" get of "/plugins/ixDROP/config.yml"
-	set {msg1} to yaml value "msg1" get of "/plugins/ixDROP/config.yml"
-	set {msg2} to yaml value "msg2" get of "/plugins/ixDROP/config.yml"
-	set {msg3} to yaml value "msg3" get of "/plugins/ixDROP/config.yml"
-	set {msg4} to yaml value "msg4" get of "/plugins/ixDROP/config.yml"
-	set {msg5} to yaml value "msg5" get of "/plugins/ixDROP/config.yml"
-	set {msg6} to yaml value "msg6" get of "/plugins/ixDROP/config.yml"
+options:
+#Tu ustaw itemy które mają być w gui (dropped)
+	item1: diamond
+	item2: iron ingot
+	item3: gold ingot
+	item4: apple
+	item5: book
+	item6: dirt
+#Nazwa itemu powyżej np (n1 = &bDiament)
+	name1: &3DIAMENT
+	name2: &7ZELAZO
+	name3: &eZLOTO
+	name4: &cJABLKO
+	name5: &6KSIAZKA
+	name6: &lPSIE GUWNO
+#Chance = Szansa (pamietaj o wstawianu 2 x %)
+	chance1: 10%%
+	chance2: 10%%
+	chance3: 10%%
+	chance4: 10%%
+	chance5: 10%%
+	chance6: 10%%
+
+	szansa1: 10%
+	szansa2: 10%
+	szansa3: 10%
+	szansa4: 10%
+	szansa5: 10%
+	szansa6: 10%
+    	# msg = Wiadomosc po wykopaniu sórowca
+	msg1: &6Znalazles &3DIAMENT &7(x1)
+	msg2: &6Znalazles &7ZELAZO &7(x1)
+	msg3: &6Znalazles &eZLOTO &7(x1)
+	msg4: &6Znalazles &cJABLKO &7(x1)
+	msg5: &6Znalazles &6KSIAZKE &7(x1)
+	msg6: &6Znalazles NIC &7(x0)
+variables:
+	{status.drop.1.%player%} = "&aWLACZONY"
+	{status.drop.2.%player%} = "&aWLACZONY"
+	{status.drop.3.%player%} = "&aWLACZONY"
+	{status.drop.4.%player%} = "&aWLACZONY"
+	{status.drop.5.%player%} = "&aWLACZONY"
+	{status.drop.6.%player%} = "&aWLACZONY"
 
 command /drop:
 	trigger:
-		format slot 0 of player with 1 of {item1} item named "&6&l%{name1}%" with lore "%{lore1}%" to close then run [make player execute command "turndrop %{item1}%"]
-		format slot 1 of player with 1 of {item2} item named "&6&l%{name2}%" with lore "%{lore2}%" to close then run [make player execute command "turndrop %{item2}%"]
-		format slot 2 of player with 1 of {item3} item named "&6&l%{name3}%" with lore "%{lore3}%" to close then run [make player execute command "turndrop %{item3}%"]
-		format slot 3 of player with 1 of {item4} item named "&6&l%{name4}%" with lore "%{lore4}%" to close then run [make player execute command "turndrop %{item4}%"]
-		format slot 4 of player with 1 of {item5} item named "&6&l%{name5}%" with lore "%{lore5}%" to close then run [make player execute command "turndrop %{item5}%"]
-		format slot 5 of player with 1 of {item6} item named "&6&l%{name6}%" with lore "%{lore6}%" to close then run [make player execute command "turndrop %{item6}%"]
-command /turndrop [<item>]:
+		open chest with 3 rows named "&cDrop" to player
+		format slot 10 of player with 1 of {@item1} named "&6&l{@name1}" with lore "&8» &7Szansa: &6{@chance1} &8•||&8» &7Status: %{status.drop.1.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 1"]
+		format slot 11 of player with 1 of {@item2} named "&6&l{@name2}" with lore "&8» &7Szansa: &6{@chance2} &8•||&8» &7Status: %{status.drop.2.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 2"]
+		format slot 12 of player with 1 of {@item3} named "&6&l{@name3}" with lore "&8» &7Szansa: &6{@chance3} &8•||&8» &7Status: %{status.drop.3.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 3"]
+		format slot 13 of player with 1 of {@item4} named "&6&l{@name4}" with lore "&8» &7Szansa: &6{@chance4} &8•||&8» &7Status: %{status.drop.4.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 4"]
+		format slot 14 of player with 1 of {@item5} named "&6&l{@name5}" with lore "&8» &7Szansa: &6{@chance5} &8•||&8» &7Status: %{status.drop.5.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 5"]
+		format slot 16 of player with 1 of {@item6} named "&6&l{@name6}" with lore "&8» &7Szansa: &6{@chance6} &8•||&8» &7Status: %{status.drop.6.%player%}% &8•||&8» &7FORTUNE: &cNIE &8•" to close then run [execute player command "turndrop 6"]
+command /turndrop [<integer>]:
 	trigger:
-		if {drop.%argument 1%.%player%} is false:
-			set {status.drop.%argument 1%.%player%} to "&awlaczony"
-			set {drop.%argument 1%.%player%} to true
-			send "&8» &aWlaczono drop &8- &3%argument 1%" to player
+		if {drop.%integer-arg%.%player%} is false:
+			set {status.drop.%integer-arg%.%player%} to "&aWLACZONY"
+			set {drop.%integer-arg%.%player%} to true
+			send "&8» &aWlaczono drop" to player
 			stop
-		else if {drop.%argument 1%.%player%} is true:
-			set {status.drop.%argument 1%.%player%} to "&cwylaczony"
-			set {drop.%argument 1%.%player%} to false
-			send "&8» &cWylaczono drop &8- &3%argument 1%" to player
+		else:
+			set {status.drop.%integer-arg%.%player%} to "&cWYLACZONY"
+			set {drop.%integer-arg%.%player%} to false
+			send "&8» &cWylaczono drop" to player
 			stop
 on mine of stone:
-	if {drop.%{item1}%.%player%} is true:
-		chance of {chance1}:
-			if player has {item1} or empty slot:
-				add {item1} to the player
-				send "%{msg1}%"
-			else:
-				drop {item1} at event-block
-				send "%{msg1}%"
-	if {drop.%{item2}%.%player%} is true:
-		chance of {chance2}:
-			if player has {item2} or empty slot:
-				add {item2} to the player
-				send "%{msg2}%"
-			else:
-				drop {item2} at event-block
-				send "%{msg2}%"
-	if {drop.%{item3}%.%player%} is true:
-		chance of {chance3}:
-			if player has {item3} or empty slot:
-				add {item3} to the player
-				send "%{msg3}%"
-			else:
-				drop {item3} at event-block
-				send "%{msg3}%"
-    if {drop.%{item4}%.%player%} is true:	
-		chance of {chance4}:
-			if player has {item4} or empty slot:
-				add {item4} to the player
-				send "%{msg4}%"
-			else:
-				drop {item4} at event-block
-				send "%{msg4}%"
-	if {drop.%{item5}%.%player%} is true:
-		chance of {chance5}:
-			if player has {item5} or empty slot:
-				add {item5} to the player
-				send "%{msg5}%"
-			else:
-				drop {item5} at event-block
-				send "%{msg5}%"
-	if {drop.%{item6}%.%player%} is true:
-		chance of {chance6}:
-			if player has {item6} or empty slot:
-				add {item6} to the player
-				send "%{msg6}%"
-			else:
-				drop {item6} at event-block
-				send "%{msg6}%"
+	cancel event
+	delete block
+	add cobblestone to player's inventory
+	chance of {@szansa1}:
+		if {drop.1.%player%} is true:
+			add {@item1} to the player's inventory
+			send "{@msg1}" to player
+	chance of {@szansa2}:
+		if {drop.2.%player%} is true:
+			add {@item2} to the player's inventory
+			send "{@msg2}" to player
+	chance of {@szansa3}:
+		if {drop.3.%player%} is true:
+			add {@item3} to the player's inventory
+			send "{@msg3}" to player
+	chance of {@szansa4}:
+		if {drop.4.%player%} is true:
+			add {@item4} to the player's inventory
+			send "{@msg4}" to player
+	chance of {@szansa5}:
+		if {drop.5.%player%} is true:
+			add {@item5} to the player's inventory
+			send "{@msg5}" to player
+	chance of {@szansa6}:
+		if {drop.6.%player%} is true:
+			add {@item6} to the player's inventory
+			send "{@msg6}" to player
+
+on mine:
+	if event-block is not stone:
+		cancel event
+		delete block
+		add event-block to player's inventory
