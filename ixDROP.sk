@@ -35,6 +35,8 @@ options:
 	msg4: &6Znalazles &cJABLKO &7(x1)
 	msg5: &6Znalazles &6KSIAZKE &7(x1)
 	msg6: &6Znalazles NIC &7(x0)
+
+	version: 0.1
 variables:
 	{status.drop.1.%player%} = "&aWLACZONY"
 	{status.drop.2.%player%} = "&aWLACZONY"
@@ -42,7 +44,19 @@ variables:
 	{status.drop.4.%player%} = "&aWLACZONY"
 	{status.drop.5.%player%} = "&aWLACZONY"
 	{status.drop.6.%player%} = "&aWLACZONY"
-
+on skript load:
+	set {_skript} to content of file "plugins/Skript/scripts/%script%.sk"
+	set {_skript2} to text from "https://raw.githubusercontent.com/imxkvpi/ixDROP/master/ixDROP.sk"
+	if {_skript} isn't "%{_skript2}%":
+		download from "https://raw.githubusercontent.com/imxkvpi/ixDROP/master/ixDROP.sk" to "plugins/skript/scripts/%script%.sk"
+		message "[ixDROP] Aktualizacja do nowszej wersji zostala pomyslnie przeprowadzona..." to the console
+		stop
+	else:
+		message "[ixDROP] Ladowanie skryptu..." to the console
+		wait 2 tick
+		message "[ixDROP] Wersja skryptu: v{@version}" to the console
+		message "[ixDROP] Skrypt jest w najnowszej wersji :)" to the console
+		stop
 command /drop:
 	trigger:
 		open chest with 3 rows named "&cDrop" to player
