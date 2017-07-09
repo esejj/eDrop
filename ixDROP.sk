@@ -1,4 +1,4 @@
-# PRAWNYM WLASCICIELEM SKRYPTU JEST IMXKVPI (KACPER.K) #
+# PRAWNYM WLASCICIELEM SKRYPTU JEST ESEJ (KACPER.K) #
 options:
 #Tu ustaw itemy które mają być w gui (dropped)
 	item1: diamond
@@ -44,19 +44,19 @@ variables:
 	{status.drop.4.%player%} = "&aWLACZONY"
 	{status.drop.5.%player%} = "&aWLACZONY"
 	{status.drop.6.%player%} = "&aWLACZONY"
-on skript load:
-	set {_skript} to content of file "plugins/Skript/scripts/%script%.sk"
-	set {_skript2} to text from "https://raw.githubusercontent.com/imxkvpi/ixDROP/master/ixDROP.sk"
-	if {_skript} isn't "%{_skript2}%":
-		download from "https://raw.githubusercontent.com/imxkvpi/ixDROP/master/ixDROP.sk" to "plugins/skript/scripts/%script%.sk"
-		message "[ixDROP] Aktualizacja do nowszej wersji zostala pomyslnie przeprowadzona..." to the console
-		stop
-	else:
-		message "[ixDROP] Ladowanie skryptu..." to the console
-		wait 2 tick
-		message "[ixDROP] Wersja skryptu: v{@version}" to the console
-		message "[ixDROP] Skrypt jest w najnowszej wersji :)" to the console
-		stop
+#on skript load: // funkcja wylaczona z racji iz usunalem config yaml.
+	#set {_skript} to content of file "plugins/Skript/scripts/%script%.sk"
+	#set {_skript2} to text from "https://raw.githubusercontent.com/esejj/ixDROP/master/ixDROP.sk"
+	#if {_skript} isn't "%{_skript2}%":
+		#download from "https://raw.githubusercontent.com/esejj/ixDROP/master/ixDROP.sk" to "plugins/skript/scripts/%script%.sk"
+		#message "[eDROP] Aktualizacja do nowszej wersji zostala pomyslnie przeprowadzona..." to the console
+		#stop
+	#else:
+		#message "[eDROP] Ladowanie skryptu..." to the console
+		#wait 2 tick
+		#message "[eDROP] Wersja skryptu: v{@version}" to the console
+		#message "[eDROP] Skrypt jest w najnowszej wersji :)" to the console
+		#stop
 command /drop:
 	trigger:
 		open chest with 3 rows named "&cDrop" to player
